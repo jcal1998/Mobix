@@ -7,10 +7,7 @@ int proximo(int x, int y, int Tabuleiro[8][8], int movimentoX[8], int movimentoY
         proxy = y + movimentoY[i];
         if ((proxx >= 0) && (proxx < 8) && (proxy >= 0) && (proxy < 8) && (Tabuleiro[proxx][proxy] == 0)) {
             Tabuleiro[proxx][proxy] = posicao + 1;
-            if (proximo(proxx, proxy, Tabuleiro, movimentoX, movimentoY , posicao+1))
-            return 1;
-        else
-            Tabuleiro[proxx][proxy] = 0;
+            proximo(proxx, proxy, Tabuleiro, movimentoX, movimentoY , posicao+1)
         }
     }
     return 0;

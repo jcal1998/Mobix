@@ -1,9 +1,11 @@
 const proximo = ( x, y, Tabuleiro, movimentoX, movimentoY, posicao) => {
-    for (let i = 0; i < 8; i++) {
-        for (let j = 0; j < 8; j++) 
-            process.stdout.write(" " + Tabuleiro[i][j] + " ");
-        console.log(""); 
-    }
+    console.log(x)
+    console.log(y)
+    console.log(posicao)
+    console.log(Tabuleiro)
+    console.log(movimentoX[2])
+    console.log(movimentoY[2])
+    console.log(posicao)
     let i, proxx, proxy;
     if (posicao == 64) return 1;
     for (i = 0; i < 8; i++) {
@@ -11,10 +13,7 @@ const proximo = ( x, y, Tabuleiro, movimentoX, movimentoY, posicao) => {
         proxy = y + movimentoY[i];
         if ((proxx >= 0) && (proxx < 8) && (proxy >= 0) && (proxy < 8) && (Tabuleiro[proxx][proxy] == 0)) {
             Tabuleiro[proxx][proxy] = posicao + 1;
-            if (proximo(proxx, proxy, Tabuleiro, movimentoX, movimentoY , posicao+1))
-            return 1;
-        else
-            Tabuleiro[proxx][proxy] = 0;
+            proximo(proxx, proxy, Tabuleiro, movimentoX, movimentoY , posicao+1);
         }
     }
     return 0;
@@ -22,7 +21,7 @@ const proximo = ( x, y, Tabuleiro, movimentoX, movimentoY, posicao) => {
 const main = () => {
     const movimentoX = [-1,-2, -2, -1, 1, 2, 2, 1], movimentoY = [2, 1, -1, -2,-2,-1, 1, 2];
     let  i, j, x , y,  Tabuleiro = [] , Tabuleiro2 = [], posicao=1, cont=1, cont2=1;
-    let posiinicial = 'a1'
+    let posiinicial = 'b4'
     x=posiinicial[1] - 1;
     if(posiinicial[0] == 'a') y=0;if(posiinicial[0] == 'b') y=1;if(posiinicial[0] == 'c') y=2;if(posiinicial[0] == 'd') y=3;if(posiinicial[0] == 'e') y=4;if(posiinicial[0] == 'f') y=5;if(posiinicial[0] == 'g') y=6;if(posiinicial[0] == 'h') y=7;
 
