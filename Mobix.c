@@ -25,11 +25,7 @@ int main(){
     Tabuleiro[x][y] = 1;
 
     proximo(x, y, Tabuleiro, movimentoX, movimentoY , posicao);
-for (i = 0; i < 8; i++) {
-        for (j = 0; j < 8; j++)
-            printf(" %3d ", Tabuleiro[i][j]);
-        printf("\n");
-    }
+
     while(cont<65){
         for (i = 0; i < 8; i++){
             for (j = 0; j < 8; j++){
