@@ -7,13 +7,13 @@ int proximo(int x, int y, int Tabuleiro[8][8], int movimentoX[8], int movimentoY
         proxy = y + movimentoY[i];
         if ((proxx >= 0) && (proxx < 8) && (proxy >= 0) && (proxy < 8) && (Tabuleiro[proxx][proxy] == 0)) {
             Tabuleiro[proxx][proxy] = posicao + 1;
-            proximo(proxx, proxy, Tabuleiro, movimentoX, movimentoY , posicao+1)
+            proximo(proxx, proxy, Tabuleiro, movimentoX, movimentoY , posicao+1);
         }
     }
     return 0;
 }
 int main(){
-    int  i, j, x , y,  movimentoX[8] = {-1,-2, -2, -1, 1, 2, 2, 1}, movimentoY[8] = { 2, 1, -1, -2,-2,-1, 1, 2}, Tabuleiro[8][8]={0}, posicao=1, cont=1;
+    int  i, j, x , y,  movimentoX[8] = { 2, 1, -1, -2,-2,-1, 1, 2}, movimentoY[8] = {-1,-2, -2, -1, 1, 2, 2, 1}, Tabuleiro[8][8]={0}, posicao=1, cont=1;
     char charY;
     printf("Qual a coluna inicial da cavalo (a-h): ");
     scanf("%c", &charY  );
